@@ -4,6 +4,12 @@ import './index.css';
 
 const Button = (props) => {
   // your code here
+  const reset = props.reset;
+  return (
+    <button onClick={(event) => {
+      reset();
+    }}>{props.children}</button>
+  );
 };
 
 const Application = () => {
@@ -17,7 +23,7 @@ const Application = () => {
 
   return (
     <main>
-      {/* your code here -- this entire line including the curly braces can be removed */}
+      <Button reset={reset}>Reset</Button>
       <h1>Hello React</h1>
     </main>
   );
